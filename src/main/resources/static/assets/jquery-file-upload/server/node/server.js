@@ -32,7 +32,7 @@
             maxFileSize: 10000000000, // 10 GB
             acceptFileTypes: /.+/i,
             // Files not matched by this regular expression force a download dialog,
-            // to prevent executing any scripts in the context of the service domain:
+            // to prevent executing any scripts in the context of the com.mkyong.service domain:
             safeFileTypes: /\.(gif|jpe?g|png)$/i,
             imageTypes: /\.(gif|jpe?g|png)$/i,
             imageVersions: {
@@ -45,7 +45,7 @@
                 allowOrigin: '*',
                 allowMethods: 'OPTIONS, HEAD, GET, POST, PUT, DELETE'
             },
-            /* Uncomment and edit this section to provide the service via HTTPS:
+            /* Uncomment and edit this section to provide the com.mkyong.service via HTTPS:
             ssl: {
                 key: fs.readFileSync('/Applications/XAMPP/etc/ssl.key/server.key'),
                 cert: fs.readFileSync('/Applications/XAMPP/etc/ssl.crt/server.crt')
