@@ -9,6 +9,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
+import javax.jws.soap.SOAPBinding;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -31,6 +33,13 @@ public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao {
     @Override
     public User findBySSO(String sso) {
         logger.info("SSO: {} ",sso);
+        //debug
+        List<User> users = findAllUsers();
+        logger.info("USERS SIZE: {}", users.size());
+        for(User user : users) {
+            logger.info("User found {} : ", user.toString());
+        }
+        //~debug
         Criteria crit = createEntityCriteria();
         crit.add(Restrictions.eq("ssoId",sso));
         User user = (User)crit.uniqueResult();

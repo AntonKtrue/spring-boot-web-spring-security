@@ -18,6 +18,9 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <hibernate.version>4.3.11.Final</hibernate.version>
+        <springframework.version>4.3.8.RELEASE</springframework.version>
+        <springsecurity.version>4.0.4.RELEASE</springsecurity.version>
     </properties>
 
     <dependencies>
@@ -65,7 +68,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
-            <version>4.3.8.RELEASE</version>
+            <version>${springframework.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -90,7 +93,7 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>5.0.3.Final</version>
+            <version>${hibernate.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
