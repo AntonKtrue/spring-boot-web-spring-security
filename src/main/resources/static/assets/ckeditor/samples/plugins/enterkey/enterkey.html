@@ -59,13 +59,13 @@ CKEDITOR.replace( '<em>textarea_id</em>', {
 	<strong>enterMode: CKEDITOR.ENTER_DIV</strong>
 });</pre>
 		<p>
-			Note that <code><em>textarea_id</em></code> in the code above is the <code>id</code> attribute of
+			Note that <code><em>textarea_id</em></code> in the code above is the <code>userId</code> attribute of
 			the <code>&lt;textarea&gt;</code> element to be replaced.
 		</p>
 	</div>
 	<div style="float: left; margin-right: 20px">
 		When <em>Enter</em> is pressed:<br>
-		<select id="xEnter" onchange="changeEnter();">
+		<select userId="xEnter" onchange="changeEnter();">
 			<option selected="selected" value="1">Create a new &lt;P&gt; (recommended)</option>
 			<option value="3">Create a new &lt;DIV&gt;</option>
 			<option value="2">Break the line with a &lt;BR&gt;</option>
@@ -73,7 +73,7 @@ CKEDITOR.replace( '<em>textarea_id</em>', {
 	</div>
 	<div style="float: left">
 		When <em>Shift+Enter</em> is pressed:<br>
-		<select id="xShiftEnter" onchange="changeEnter();">
+		<select userId="xShiftEnter" onchange="changeEnter();">
 			<option value="1">Create a new &lt;P&gt;</option>
 			<option value="3">Create a new &lt;DIV&gt;</option>
 			<option selected="selected" value="2">Break the line with a &lt;BR&gt; (recommended)</option>
@@ -83,18 +83,18 @@ CKEDITOR.replace( '<em>textarea_id</em>', {
 	<form action="../../../samples/sample_posteddata.php" method="post">
 		<p>
 			<br>
-			<textarea cols="80" id="editor1" name="editor1" rows="10">This is some &lt;strong&gt;sample text&lt;/strong&gt;. You are using &lt;a href="http://ckeditor.com/"&gt;CKEditor&lt;/a&gt;.</textarea>
+			<textarea cols="80" userId="editor1" name="editor1" rows="10">This is some &lt;strong&gt;sample text&lt;/strong&gt;. You are using &lt;a href="http://ckeditor.com/"&gt;CKEditor&lt;/a&gt;.</textarea>
 		</p>
 		<p>
 			<input type="submit" value="Submit">
 		</p>
 	</form>
-	<div id="footer">
+	<div userId="footer">
 		<hr>
 		<p>
 			CKEditor - The text editor for the Internet - <a class="samples" href="http://ckeditor.com/">http://ckeditor.com</a>
 		</p>
-		<p id="copy">
+		<p userId="copy">
 			Copyright &copy; 2003-2013, <a class="samples" href="http://cksource.com/">CKSource</a> - Frederico
 			Knabben. All rights reserved.
 		</p>

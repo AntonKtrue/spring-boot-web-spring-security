@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head th:include="kaawork/templates :: head">
-	<title id="pageTitle">kaa-work :: MyLiveRusume</title>
+	<title userId="pageTitle">kaa-work :: MyLiveRusume</title>
 </head>
 
   <body>
   <!-- container section start -->
-  <section id="container" class="">
+  <section userId="container" class="">
       <header th:include="kaawork/templates :: topnav" class="header dark-bg"></header>
 
 	  <aside th:include="kaawork/templates :: asidemenu"></aside>
 
-      <section id="main-content">
+      <section userId="main-content">
           <section class="wrapper">            
               <!--overview start-->
 			  <div class="row">
@@ -73,7 +73,7 @@
 							</div>	
 						</div>
 						<div class="panel-body-map">
-							<div id="map" style="height:380px;"></div>	
+							<div userId="map" style="height:380px;"></div>
 						</div>
 	
 					</div>
@@ -84,24 +84,24 @@
                 <!-- List #1 -->
 				<li>
                   <!-- Graph -->
-                  <div><span id="todayspark1" class="spark"></span></div>
+                  <div><span userId="todayspark1" class="spark"></span></div>
                   <!-- Text -->
                   <div class="datas-text">11,500 visitors/day</div>
                 </li>
                 <li>
-                  <div><span id="todayspark2" class="spark"></span></div>
+                  <div><span userId="todayspark2" class="spark"></span></div>
                   <div class="datas-text">15,000 Pageviews</div>
                 </li>
                 <li>
-                  <div><span id="todayspark3" class="spark"></span></div>
+                  <div><span userId="todayspark3" class="spark"></span></div>
                   <div class="datas-text">30.55% Bounce Rate</div>
                 </li>
                 <li>
-                  <div><span id="todayspark4" class="spark"></span></div>
+                  <div><span userId="todayspark4" class="spark"></span></div>
                   <div class="datas-text">$16,00 Revenue/Day</div>
                 </li> 
                 <li>
-                  <div><span id="todayspark5" class="spark"></span></div>
+                  <div><span userId="todayspark5" class="spark"></span></div>
                   <div class="datas-text">12,000000 visitors every Month</div>
                 </li>                                                                                                              
               </ul>
@@ -318,14 +318,8 @@
 				</div><!--/col-->
 				
               </div>
-
-                    
                    
                 <!-- statics end -->
-              
-            
-				
-
               <!-- project team & activity start -->
           <div class="row">
             <div class="col-md-4 portlets">
@@ -464,7 +458,7 @@
                                       <span class="badge bg-success">Task</span>
                                   </td>
                                   <td>
-                                      <div id="work-progress2"></div>
+                                      <div userId="work-progress2"></div>
                                   </td>
                               </tr>
                               <tr>
@@ -476,7 +470,7 @@
                                       <span class="badge bg-success">Task</span>
                                   </td>
                                   <td>
-                                      <div id="work-progress3"></div>
+                                      <div userId="work-progress3"></div>
                                   </td>
                               </tr>                              
                               <tr>
@@ -502,7 +496,7 @@
                                       <span class="badge bg-info">Milestone</span>
                                   </td>
                                   <td>
-                                      <div id="work-progress4"></div>
+                                      <div userId="work-progress4"></div>
                                   </td>
                               </tr>                              
                               <tr>
@@ -514,7 +508,7 @@
                                       <span class="badge bg-primary">To-Do</span>
                                   </td>
                                   <td>
-                                      <div id="work-progress5"></div>
+                                      <div userId="work-progress5"></div>
                                   </td>
                               </tr>
 							  <tr>
@@ -526,7 +520,7 @@
                                       <span class="badge bg-primary">To-Do</span>
                                   </td>
                                   <td>
-                                      <div id="work-progress1"></div>
+                                      <div userId="work-progress1"></div>
                                   </td>
                               </tr>
 							  <tr>
@@ -565,7 +559,7 @@
                   <!-- Widget content -->
                   
                     <!-- Below line produces calendar. I am using FullCalendar plugin. -->
-                    <div id="calendar" />
+                    <div userId="calendar" />
                   
                 </div>
               </div> 
@@ -592,14 +586,14 @@
                                           <div class="form-group">
                                             <label class="control-label col-lg-2" for="title">Title</label>
                                             <div class="col-lg-10"> 
-                                              <input type="text" class="form-control" id="title" />
+                                              <input type="text" class="form-control" userId="title" />
                                             </div>
                                           </div>   
                                           <!-- Content -->
                                           <div class="form-group">
                                             <label class="control-label col-lg-2" for="content">Content</label>
                                             <div class="col-lg-10">
-                                              <textarea class="form-control" id="content"></textarea>
+                                              <textarea class="form-control" userId="content"></textarea>
                                             </div>
                                           </div>                           
                                           <!-- Cateogry -->
@@ -619,7 +613,7 @@
                                           <div class="form-group">
                                             <label class="control-label col-lg-2" for="tags">Tags</label>
                                             <div class="col-lg-10">
-                                              <input type="text" class="form-control" id="tags" />
+                                              <input type="text" class="form-control" userId="tags" />
                                             </div>
                                           </div>
                                           

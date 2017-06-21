@@ -13,23 +13,23 @@
 	<div class="redBorder"></div>
 	<div class="greenBorder"></div>
 	<div class="yellowBorder"></div>
-	<div id="wrapper">
+	<div userId="wrapper">
 		<nav>	
 			<dl>
 			</dl>
 		</nav>
 		
-		<div id="contentWrapper">
-			<h1 id="mainHeader">Chart.js Documentation</h1>
-			<h2 id="introText">Everything you need to know to create great looking charts using Chart.js</h2>
-			<article id="gettingStarted">
+		<div userId="contentWrapper">
+			<h1 userId="mainHeader">Chart.js Documentation</h1>
+			<h2 userId="introText">Everything you need to know to create great looking charts using Chart.js</h2>
+			<article userId="gettingStarted">
 				<h1>Getting started</h1>
 				<h2>Include Chart.js</h2>
 				<p>First we need to include the Chart.js library on the page. The library occupies a global variable of <code>Chart</code>.</p>
 				<pre data-type="html"><code>&lt;script src=&quot;Chart.js&quot;&gt;&lt;/script&gt;</code></pre>
 				<h2>Creating a chart</h2>
 				<p>To create a chart, we need to instantiate the Chart class. To do this, we need to pass in the 2d context of where we want to draw the chart. Here's an example.</p>
-				<pre data-type="html"><code>&lt;canvas id=&quot;myChart&quot; width=&quot;400&quot; height=&quot;400&quot;&gt;&lt;/canvas&gt;</code></pre>
+				<pre data-type="html"><code>&lt;canvas userId=&quot;myChart&quot; width=&quot;400&quot; height=&quot;400&quot;&gt;&lt;/canvas&gt;</code></pre>
 				<pre data-type="javascript"><code>//Get the context of the canvas element we want to select
 var ctx = document.getElementById("myChart").getContext("2d");
 var myNewChart = new Chart(ctx).PolarArea(data);</code></pre>
@@ -44,13 +44,13 @@ var myNewChart = new Chart(ctx);</code></pre>
 				<p>We call a method of the name of the chart we want to create. We pass in the data for that chart type, and the options for that chart as parameters. Chart.js will merge the options you pass in with the default options for that chart type.</p>
 			</article>	
 			
-<article id="lineChart">
+<article userId="lineChart">
 				<h1>Line chart</h1>
 				<h2>Introduction</h2>
 				<p>A line chart is a way of plotting data points on a line.</p>
 				<p>Often, it is used to show trend data, and the comparison of two data sets.</p>
 				<h2>Example usage</h2>
-				<canvas id="line" data-type="Line" width="600" height="400"></canvas>
+				<canvas userId="line" data-type="Line" width="600" height="400"></canvas>
 				<pre data-type="javascript"><code>new Chart(ctx).Line(data,options);</code></pre>
 				<h2>Data structure</h2>	
 				<pre data-type="javascript"><code data-for="line">var data = {
@@ -161,13 +161,13 @@ var myNewChart = new Chart(ctx);</code></pre>
 }</code></pre>
 			</article>	
 			
-<article id="barChart">
+<article userId="barChart">
 				<h1>Bar chart</h1>
 				<h2>Introduction</h2>
 				<p>A bar chart is a way of showing data as bars.</p>
 				<p>It is sometimes used to show trend data, and the comparison of multiple data sets side by side.</p>
 				<h2>Example usage</h2>
-				<canvas id="bar" data-type="Bar" width="600" height="400"></canvas>
+				<canvas userId="bar" data-type="Bar" width="600" height="400"></canvas>
 				<pre data-type="javascript"><code>new Chart(ctx).Bar(data,options);</code></pre>
 				<h2>Data structure</h2>	
 				<pre data-type="javascript"><code data-for="bar">var data = {
@@ -265,13 +265,13 @@ var myNewChart = new Chart(ctx);</code></pre>
 }</code></pre>
 			</article>						
 			
-			<article id="radarChart">
+			<article userId="radarChart">
 				<h1>Radar chart</h1>
 				<h2>Introduction</h2>
 				<p>A radar chart is a way of showing multiple data points and the variation between them.</p>
 				<p>They are often useful for comparing the points of two or more different data sets</p>
 				<h2>Example usage</h2>
-				<canvas id="radar" data-type="Radar" width="400" height="400"></canvas>
+				<canvas userId="radar" data-type="Radar" width="400" height="400"></canvas>
 				<pre data-type="javascript"><code>new Chart(ctx).Radar(data,options);</code></pre>
 				<h2>Data structure</h2>	
 				<pre data-type="javascript"><code data-for="radar">var data = {
@@ -406,13 +406,13 @@ var myNewChart = new Chart(ctx);</code></pre>
 }</code></pre>
 			</article>			
 			
-			<article id="polarAreaChart">
+			<article userId="polarAreaChart">
 				<h1>Polar area chart</h1>
 				<h2>Introduction</h2>
 				<p>Polar area charts are similar to pie charts, but each segment has the same angle - the radius of the segment differs depending on the value.</p>
 				<p>This type of chart is often useful when we want to show a comparison data similar to a pie chart, but also show a scale of values for context.</p>
 				<h2>Example usage</h2>
-				<canvas id="polarArea" data-type="PolarArea" width="300" height="300"></canvas>
+				<canvas userId="polarArea" data-type="PolarArea" width="300" height="300"></canvas>
 				<pre data-type="javascript"><code>new Chart(ctx).PolarArea(data,options);</code></pre>
 				<h2>Data structure</h2>
 				<pre data-type="javascript"><code data-for="polarArea">var data = [
@@ -527,13 +527,13 @@ var myNewChart = new Chart(ctx);</code></pre>
 	onAnimationComplete : null
 }</code></pre>
 			</article>
-			<article id="pieChart">
+			<article userId="pieChart">
 				<h1>Pie chart</h1>
 				<h2>Introduction</h2>
 				<p>Pie charts are probably the most commonly used chart there are. They are divided into segments, the arc of each segment shows a the proportional value of each piece of data.</p>
 				<p>They are excellent at showing the relational proportions between data.</p>
 				<h2>Example usage</h2>
-				<canvas id="pie" data-type="Pie" width="400" height="400"></canvas>
+				<canvas userId="pie" data-type="Pie" width="400" height="400"></canvas>
 				<pre data-type="javascript"><code>new Chart(ctx).Pie(data,options);</code></pre>
 				<h2>Data structure</h2>
 				<pre data-type="javascript"><code data-for="pie">var data = [
@@ -582,13 +582,13 @@ var myNewChart = new Chart(ctx);</code></pre>
 	onAnimationComplete : null
 }</code></pre>
 			</article>
-			<article id="doughnutChart">
+			<article userId="doughnutChart">
 				<h1>Doughnut chart</h1>
 				<h2>Introduction</h2>
 				<p>Doughnut charts are similar to pie charts, however they have the centre cut out, and are therefore shaped more like a doughnut than a pie!</p>
 				<p>They are aso excellent at showing the relational proportions between data.</p>
 				<h2>Example usage</h2>
-				<canvas id="doughnut" data-type="Doughnut" width="400" height="400"></canvas>
+				<canvas userId="doughnut" data-type="Doughnut" width="400" height="400"></canvas>
 				<pre data-type="javascript"><code>new Chart(ctx).Doughnut(data,options);</code></pre>
 				<h2>Data structure</h2>
 				<pre data-type="javascript"><code data-for="doughnut">var data = [
@@ -649,7 +649,7 @@ var myNewChart = new Chart(ctx);</code></pre>
 	onAnimationComplete : null
 }</code></pre>
 			</article>
-			<article id="generalIssues">
+			<article userId="generalIssues">
 				<h1>General issues</h1>
 				<h2>Chart interactivity</h2>
 				<p>If you are looking to add interaction as a layer to charts, Chart.js is <strong>not the library for you</strong>. A better option would be using SVG, as this will let you attach event listeners to any of the elements in the chart, as these are all DOM nodes.</p>
@@ -689,7 +689,7 @@ var myNewChart = new Chart(ctx);</code></pre>
 			var $el = $(this);
 			var $h1 = $el.find("h1");
 			var sectionTitle = $h1.html();
-			var articleId = $el.attr("id");
+			var articleId = $el.attr("userId");
 			var $dt = $("<dt><a href=\"#"+articleId +"\">"+sectionTitle+"</a></dt>");
 			
 			$dt.find("a").on("click",function(e){
@@ -705,7 +705,7 @@ var myNewChart = new Chart(ctx);</code></pre>
 				var $h2 = $(this);
 				var title = $h2.text();
 				var newID = articleId + "-" +camelCase(title);
-				$h2.attr("id",newID);
+				$h2.attr("userId",newID);
 				var $dd = $("<dd><a href=\"#" +newID + "\">" + title + "</a></dd>");
 				
 				$dd.find("a").on("click",function(e){
@@ -726,7 +726,7 @@ var myNewChart = new Chart(ctx);</code></pre>
 			
 			
 			
-			eval($("code[data-for='" + $canvas.attr("id") + "']").text());
+			eval($("code[data-for='" + $canvas.attr("userId") + "']").text());
 			
 			
 			var evalString = "new Chart(ctx)." + $canvas.data("type") + "(data);";

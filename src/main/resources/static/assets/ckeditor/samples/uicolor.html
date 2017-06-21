@@ -32,14 +32,14 @@ CKEDITOR.replace( '<em>textarea_id</em>', {
 	<strong>uiColor: '#14B8C4'</strong>
 });</pre>
 	<p>
-		Note that <code><em>textarea_id</em></code> in the code above is the <code>id</code> attribute of
+		Note that <code><em>textarea_id</em></code> in the code above is the <code>userId</code> attribute of
 		the <code>&lt;textarea&gt;</code> element to be replaced.
 	</p>
 	<p>
-		<textarea cols="80" id="editor1" name="editor1" rows="10">&lt;p&gt;This is some &lt;strong&gt;sample text&lt;/strong&gt;. You are using &lt;a href="http://ckeditor.com/"&gt;CKEditor&lt;/a&gt;.&lt;/p&gt;</textarea>
+		<textarea cols="80" userId="editor1" name="editor1" rows="10">&lt;p&gt;This is some &lt;strong&gt;sample text&lt;/strong&gt;. You are using &lt;a href="http://ckeditor.com/"&gt;CKEditor&lt;/a&gt;.&lt;/p&gt;</textarea>
 		<script>
 
-			// Replace the <textarea id="editor"> with an CKEditor
+			// Replace the <textarea userId="editor"> with an CKEditor
 			// instance, using default configurations.
 			CKEDITOR.replace( 'editor1', {
 				uiColor: '#14B8C4',
@@ -55,12 +55,12 @@ CKEDITOR.replace( '<em>textarea_id</em>', {
 		<input type="submit" value="Submit">
 	</p>
 	</form>
-	<div id="footer">
+	<div userId="footer">
 		<hr>
 		<p>
 			CKEditor - The text editor for the Internet - <a class="samples" href="http://ckeditor.com/">http://ckeditor.com</a>
 		</p>
-		<p id="copy">
+		<p userId="copy">
 			Copyright &copy; 2003-2013, <a class="samples" href="http://cksource.com/">CKSource</a> - Frederico
 			Knabben. All rights reserved.
 		</p>

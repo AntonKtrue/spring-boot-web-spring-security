@@ -34,12 +34,25 @@ public class User implements Serializable{
 	@Column(name="email", nullable=false)
 	private String email;
 
+	@OneToOne(fetch = FetchType.LAZY, mappedBy = "app_user", cascade = CascadeType.ALL)
+	private Profile profile;
+
 	@NotEmpty
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "app_user_user_profile",
              joinColumns = { @JoinColumn(name = "user_id") },
              inverseJoinColumns = { @JoinColumn(name = "user_profile_id") })
 	private Set<UserProfile> userProfiles = new HashSet<UserProfile>();
+
+
+
+	public Profile getProfile() {
+		return profile;
+	}
+
+	public void setProfile(Profile profile) {
+		this.profile = profile;
+	}
 
 	public Integer getId() {
 		return id;

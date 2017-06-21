@@ -14,7 +14,6 @@ import ru.kaawork.auth.converter.RoleToUserProfileConverter;
 
 
 @Configuration
-@EnableWebMvc
 @ComponentScan(basePackages = "ru.kaawork.auth")
 public class AppConfig extends WebMvcConfigurerAdapter {
 	

@@ -17,6 +17,16 @@ public class KaaworkController {
         return new ModelAndView("kaawork/index");
     }
 
+    @RequestMapping("login")
+    public ModelAndView getLogin() {
+        return new ModelAndView("kaawork/login");
+    }
+
+    @RequestMapping("profile")
+    public ModelAndView getProfile() {
+        return new ModelAndView("kaawork/profile");
+    }
+
     @RequestMapping("resume")
     public ModelAndView getResume() {
         return new ModelAndView("kaawork/resume");

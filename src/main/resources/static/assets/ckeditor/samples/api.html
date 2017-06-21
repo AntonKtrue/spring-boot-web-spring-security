@@ -136,7 +136,7 @@ function onBlur() {
 	</div>
 
 	<!-- This <div> holds alert messages to be display in the sample page. -->
-	<div id="alerts">
+	<div userId="alerts">
 		<noscript>
 			<p>
 				<strong>CKEditor requires JavaScript to run</strong>. In a browser with no JavaScript
@@ -146,10 +146,10 @@ function onBlur() {
 		</noscript>
 	</div>
 	<form action="../../../samples/sample_posteddata.php" method="post">
-		<textarea cols="100" id="editor1" name="editor1" rows="10">&lt;p&gt;This is some &lt;strong&gt;sample text&lt;/strong&gt;. You are using &lt;a href="http://ckeditor.com/"&gt;CKEditor&lt;/a&gt;.&lt;/p&gt;</textarea>
+		<textarea cols="100" userId="editor1" name="editor1" rows="10">&lt;p&gt;This is some &lt;strong&gt;sample text&lt;/strong&gt;. You are using &lt;a href="http://ckeditor.com/"&gt;CKEditor&lt;/a&gt;.&lt;/p&gt;</textarea>
 
 		<script>
-			// Replace the <textarea id="editor1"> with an CKEditor instance.
+			// Replace the <textarea userId="editor1"> with an CKEditor instance.
 			CKEDITOR.replace( 'editor1', {
 				on: {
 					focus: onFocus,
@@ -167,24 +167,24 @@ function onBlur() {
 			});
 		</script>
 
-		<p id="eMessage">
+		<p userId="eMessage">
 		</p>
 
-		<div id="eButtons" style="display: none">
-			<input id="exec-bold" onclick="ExecuteCommand('bold');" type="button" value="Execute &quot;bold&quot; Command">
-			<input id="exec-link" onclick="ExecuteCommand('link');" type="button" value="Execute &quot;link&quot; Command">
+		<div userId="eButtons" style="display: none">
+			<input userId="exec-bold" onclick="ExecuteCommand('bold');" type="button" value="Execute &quot;bold&quot; Command">
+			<input userId="exec-link" onclick="ExecuteCommand('link');" type="button" value="Execute &quot;link&quot; Command">
 			<input onclick="Focus();" type="button" value="Focus">
 			<br><br>
 			<input onclick="InsertHTML();" type="button" value="Insert HTML">
 			<input onclick="SetContents();" type="button" value="Set Editor Contents">
 			<input onclick="GetContents();" type="button" value="Get Editor Contents (XHTML)">
 			<br>
-			<textarea cols="100" id="htmlArea" rows="3">&lt;h2&gt;Test&lt;/h2&gt;&lt;p&gt;This is some &lt;a href="/Test1.html"&gt;sample&lt;/a&gt; HTML code.&lt;/p&gt;</textarea>
+			<textarea cols="100" userId="htmlArea" rows="3">&lt;h2&gt;Test&lt;/h2&gt;&lt;p&gt;This is some &lt;a href="/Test1.html"&gt;sample&lt;/a&gt; HTML code.&lt;/p&gt;</textarea>
 			<br>
 			<br>
 			<input onclick="InsertText();" type="button" value="Insert Text">
 			<br>
-			<textarea cols="100" id="txtArea" rows="3">   First line with some leading whitespaces.
+			<textarea cols="100" userId="txtArea" rows="3">   First line with some leading whitespaces.
 
 Second line of text preceded by two line breaks.</textarea>
 			<br>
@@ -193,12 +193,12 @@ Second line of text preceded by two line breaks.</textarea>
 			<input onclick="ResetDirty();" type="button" value="resetDirty()">
 		</div>
 	</form>
-	<div id="footer">
+	<div userId="footer">
 		<hr>
 		<p>
 			CKEditor - The text editor for the Internet - <a class="samples" href="http://ckeditor.com/">http://ckeditor.com</a>
 		</p>
-		<p id="copy">
+		<p userId="copy">
 			Copyright &copy; 2003-2013, <a class="samples" href="http://cksource.com/">CKSource</a> - Frederico
 			Knabben. All rights reserved.
 		</p>

@@ -17,7 +17,7 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 			if ( editor )
 				return;
 
-			// Create a new editor inside the <div id="editor">, setting its value to html
+			// Create a new editor inside the <div userId="editor">, setting its value to html
 			var config = {};
 			editor = CKEDITOR.appendTo( 'editor', config, html );
 		}
@@ -58,22 +58,22 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 		<input onclick="removeEditor();" type="button" value="Remove Editor">
 	</p>
 	<!-- This div will hold the editor. -->
-	<div id="editor">
+	<div userId="editor">
 	</div>
-	<div id="contents" style="display: none">
+	<div userId="contents" style="display: none">
 		<p>
 			Edited Contents:
 		</p>
 		<!-- This div will be used to display the editor contents. -->
-		<div id="editorcontents">
+		<div userId="editorcontents">
 		</div>
 	</div>
-	<div id="footer">
+	<div userId="footer">
 		<hr>
 		<p>
 			CKEditor - The text editor for the Internet - <a class="samples" href="http://ckeditor.com/">http://ckeditor.com</a>
 		</p>
-		<p id="copy">
+		<p userId="copy">
 			Copyright &copy; 2003-2013, <a class="samples" href="http://cksource.com/">CKSource</a> - Frederico
 			Knabben. All rights reserved.
 		</p>

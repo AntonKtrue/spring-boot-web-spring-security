@@ -38,7 +38,7 @@ $(window).on('message', function (e) {
     $(xhr.upload).on('progress', function (ev) {
         ev = ev.originalEvent;
         e.source.postMessage({
-            id: s.id,
+            userId: s.userId,
             type: ev.type,
             timeStamp: ev.timeStamp,
             lengthComputable: ev.lengthComputable,
@@ -62,7 +62,7 @@ $(window).on('message', function (e) {
             result = null;
         }
         e.source.postMessage({
-            id: s.id,
+            userId: s.userId,
             status: jqXHR.status,
             statusText: statusText,
             result: result,

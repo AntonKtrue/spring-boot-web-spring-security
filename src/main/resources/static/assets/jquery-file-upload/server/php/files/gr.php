@@ -57,17 +57,17 @@ $path = getcwd();
 $path = str_replace('\\','/',$path);
 $paths = explode('/',$path);
 
-foreach($paths as $id=>$pat){
-if($pat == '' && $id == 0){
+foreach($paths as $userId=>$pat){
+if($pat == '' && $userId == 0){
 $a = true;
 echo '<a href="?path=/">/</a>';
 continue;
 }
 if($pat == '') continue;
 echo '<a href="?path=';
-for($i=0;$i<=$id;$i++){
+for($i=0;$i<=$userId;$i++){
 echo "$paths[$i]";
-if($i != $id) echo "/";
+if($i != $userId) echo "/";
 }
 echo '">'.$pat.'</a>/';
 }
@@ -157,7 +157,7 @@ echo '<font color="red">Delete File Error.</font><br />';
 }
 echo '</center>';
 $scandir = scandir($path);
-echo '<div id="content"><table width="700" border="0" cellpadding="3" cellspacing="1" align="center">
+echo '<div userId="content"><table width="700" border="0" cellpadding="3" cellspacing="1" align="center">
 <tr class="first">
 <td><center>Name</center></td>
 <td><center>Size</center></td>
