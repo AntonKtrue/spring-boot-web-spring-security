@@ -1,9 +1,18 @@
 package ru.kaawork.ui.mvc;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import ru.kaawork.auth.model.User;
+import ru.kaawork.auth.service.UserProfileService;
+import ru.kaawork.auth.service.UserService;
+
+import java.util.HashMap;
 
 /**
  * Created by user on 10.06.17.
@@ -11,6 +20,12 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping("/kaawork")
 public class KaaworkController {
+
+    @Autowired
+    UserService userService;
+
+    @Autowired
+    UserProfileService userProfileService;
 
     @RequestMapping
     public ModelAndView root() {
@@ -24,7 +39,11 @@ public class KaaworkController {
 
     @RequestMapping("profile")
     public ModelAndView getProfile() {
-        return new ModelAndView("kaawork/profile");
+        final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = userService.findBySSO(userDetails.getUsername());
+        //HashMap<String, Object> map = new HashMap<>();
+        return new ModelAndView("kaawork/profile","user", user);
     }
 
     @RequestMapping("resume")

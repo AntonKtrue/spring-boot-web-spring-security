@@ -11,14 +11,24 @@ import java.util.Date;
 @Entity
 @Table(name = "profile")
 public class Profile {
-
+    @GenericGenerator(name = "generator", strategy = "foreign",
+            parameters = @Parameter(name = "property", value = "app_user"))
+    @Id
+    @GeneratedValue(generator = "generator")
+    @Column(name = "user_id", unique = true, nullable = false)
     private Integer userId;
+    @OneToOne(fetch = FetchType.LAZY)
+    @PrimaryKeyJoinColumn
     private User user;
+    @Column(name = "first_name")
     private String firstName;
+    @Column(name = "last_name")
     private String lastName;
+    @Column(name = "about_me")
     private String aboutMe;
-    private Integer country_id;
+    @Column(name = "birth_date")
     private Date birthDate;
+
     private String occupation;
     //@Email
     private String email;
@@ -27,12 +37,11 @@ public class Profile {
     public Profile() {
     }
 
-    public Profile(User user, String firstName, String lastName, String aboutMe, Integer country_id, Date birthDate, String occupation, String email, String website) {
+    public Profile(User user, String firstName, String lastName, String aboutMe, Date birthDate, String occupation, String email, String website) {
         this.user = user;
         this.firstName = firstName;
         this.lastName = lastName;
         this.aboutMe = aboutMe;
-        this.country_id = country_id;
         this.birthDate = birthDate;
         this.occupation = occupation;
         this.email = email;
@@ -43,11 +52,6 @@ public class Profile {
         return userId;
     }
 
-    @GenericGenerator(name = "generator", strategy = "foreign",
-            parameters = @Parameter(name = "property", value = "app_user"))
-    @Id
-    @GeneratedValue(generator = "generator")
-    @Column(name = "user_id", unique = true, nullable = false)
     public void setUserId(Integer userId) {
         this.userId = userId;
     }
@@ -74,14 +78,6 @@ public class Profile {
 
     public void setAboutMe(String aboutMe) {
         this.aboutMe = aboutMe;
-    }
-
-    public Integer getCountry_id() {
-        return country_id;
-    }
-
-    public void setCountry_id(Integer country_id) {
-        this.country_id = country_id;
     }
 
     public Date getBirthDate() {

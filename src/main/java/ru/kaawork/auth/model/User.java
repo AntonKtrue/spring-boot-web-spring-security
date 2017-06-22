@@ -34,7 +34,7 @@ public class User implements Serializable{
 	@Column(name="email", nullable=false)
 	private String email;
 
-	@OneToOne(fetch = FetchType.LAZY, mappedBy = "app_user", cascade = CascadeType.ALL)
+	@OneToOne(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
 	private Profile profile;
 
 	@NotEmpty
@@ -43,8 +43,6 @@ public class User implements Serializable{
              joinColumns = { @JoinColumn(name = "user_id") },
              inverseJoinColumns = { @JoinColumn(name = "user_profile_id") })
 	private Set<UserProfile> userProfiles = new HashSet<UserProfile>();
-
-
 
 	public Profile getProfile() {
 		return profile;
