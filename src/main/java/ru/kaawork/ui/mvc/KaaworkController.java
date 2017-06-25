@@ -51,16 +51,14 @@ public class KaaworkController {
             return null;
         }
     }
+    @ModelAttribute("roles")
+    public List<UserProfile> initializeProfiles() {
+        return userProfileService.findAll();
+    }
 
     @RequestMapping
     public ModelAndView root() {
         return new ModelAndView("kaawork/index", "user", getCurrentUser());
-    }
-
-    @RequestMapping("registration")
-    public String getRegistration(Model model) {
-        model.addAttribute("newuser", new User());
-        return "kaawork/registration";
     }
 
     @RequestMapping(value = "registration", method = RequestMethod.POST)
@@ -69,23 +67,6 @@ public class KaaworkController {
         userService.saveUser(newuser);
         return "kaawork/login";
     }
-
-    @ModelAttribute("roles")
-    public List<UserProfile> initializeProfiles() {
-        return userProfileService.findAll();
-    }
-
-    @RequestMapping("login")
-    public String getLogin() {
-        return "kaawork/login";
-    }
-
-    @RequestMapping("profile")
-    public String getProfile(Model model) {
-        model.addAttribute("user", getCurrentUser());
-        return "kaawork/login";
-    }
-
     @RequestMapping(value = "profile", method = RequestMethod.POST)
     public String editProfile(@ModelAttribute User user, Model model) {
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -104,28 +85,75 @@ public class KaaworkController {
         return "kaawork/profile";
     }
 
-    @RequestMapping("resume")
-    public String getResume(Model model) {
+//    @RequestMapping("registration")
+//    public String getRegistration(Model model) {
+//        model.addAttribute("newuser", new User());
+//        return "kaawork/registration";
+//    }
+
+    @RequestMapping("/{page}")
+    public String getPage(@PathVariable("page") String page, Model model) {
+        if(page.equals("registration")) {
+            model.addAttribute("newuser", new User());
+            return "kaawork/registration";
+        }
         model.addAttribute("user", getCurrentUser());
-        return "kaawork/resume";
+        switch (page) {
+            case "templates":
+                return "kaawork/templates";
+            case "login":
+                return "kaawork/login";
+            case "profile":
+                return "kaawork/profile";
+            case "resume":
+                return "kaawork/resume";
+            case "widgets":
+                return "kaawork/widgets";
+            case "chart-chartjs":
+                return "kaawork/chart-chartjs";
+            case "ws":
+                model.addAttribute("ipaddress", clientIpAddress());
+                model.addAttribute("country",clientCountry());
+                return "kaawork/ws_start";
+            default:
+                return "kaawork/index";
+        }
     }
 
-    @RequestMapping("widgets")
-    public String getWidgets(Model model) {
-        model.addAttribute("user", getCurrentUser());
-        return "kaawork/widgets";
-    }
 
-    @RequestMapping("chart-chartjs")
-    public String getCharts(Model model) {
-        model.addAttribute("user", getCurrentUser());
-        return "kaawork/chart-chartjs";
-    }
+//    @RequestMapping("login")
+//    public String getLogin() {
+//        return "kaawork/login";
+//    }
 
-    @RequestMapping("templates")
-    public String getTemplates() {
-        return "kaawork/templates";
-    }
+//    @RequestMapping("profile")
+//    public String getProfile(Model model) {
+//        model.addAttribute("user", getCurrentUser());
+//        return "kaawork/profile";
+//    }
+
+//    @RequestMapping("resume")
+//    public String getResume(Model model) {
+//        model.addAttribute("user", getCurrentUser());
+//        return "kaawork/resume";
+//    }
+
+//    @RequestMapping("widgets")
+//    public String getWidgets(Model model) {
+//        model.addAttribute("user", getCurrentUser());
+//        return "kaawork/widgets";
+//    }
+
+//    @RequestMapping("chart-chartjs")
+//    public String getCharts(Model model) {
+//        model.addAttribute("user", getCurrentUser());
+//        return "kaawork/chart-chartjs";
+//    }
+
+//    @RequestMapping("templates")
+//    public String getTemplates() {
+//        return "kaawork/templates";
+//    }
 
     @RequestMapping("form/{value}")
     public String form(@PathVariable("value") String value, Model model) {
@@ -167,12 +195,6 @@ public class KaaworkController {
         return geoIP.getCountryName();
     }
 
-    @RequestMapping("ws")
-    public String mainPage(Model model) {
-        model.addAttribute("ipaddress", clientIpAddress());
-        model.addAttribute("country",clientCountry());
-        model.addAttribute("user",getCurrentUser());
-        return "kaawork/ws_start";
-    }
+
 
 }
