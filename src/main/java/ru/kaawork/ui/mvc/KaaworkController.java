@@ -1,7 +1,7 @@
 package ru.kaawork.ui.mvc;
 
 
-import com.sun.javafx.sg.prism.NGShape;
+
 import net.webservicex.geoip.GeoIP;
 import net.webservicex.geoip.GeoIPService;
 import net.webservicex.geoip.GeoIPServiceSoap;
@@ -23,7 +23,6 @@ import ru.kaawork.auth.model.UserProfile;
 
 import ru.kaawork.auth.service.UserProfileService;
 import ru.kaawork.auth.service.UserService;
-import ru.kaawork.auth.service.UserServiceImpl;
 
 import java.util.List;
 
