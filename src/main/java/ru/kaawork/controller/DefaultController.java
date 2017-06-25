@@ -49,6 +49,9 @@ public class DefaultController {
         return "/login";
     }
 
+//    @GetMapping("/error")
+//    public String error() { return "/kaawork/404.html"; }
+
     @GetMapping("/403")
     public String error403() {
         return "/error/403";
@@ -61,7 +64,7 @@ public class DefaultController {
             persistentTokenBasedRememberMeServices.logout(request, response, auth);
             SecurityContextHolder.getContext().setAuthentication(null);
         }
-        return "redirect:/login?logout";
+        return "redirect:/kaawork";
     }
 
 }

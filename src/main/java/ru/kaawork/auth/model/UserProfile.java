@@ -2,6 +2,8 @@ package ru.kaawork.auth.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name="user_profile")
@@ -28,6 +30,9 @@ public class UserProfile implements Serializable{
 	public void setType(String type) {
 		this.type = type;
 	}
+
+	/*@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "userProfiles")
+	public Set<User> users = new HashSet<User>();*/
 
 	@Override
 	public int hashCode() {

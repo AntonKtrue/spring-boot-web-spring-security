@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:th="http://www.thymeleaf.org"
+       xmlns:sec="http://www.springframework.org/security/tags">
+<head th:include="kaawork/templates :: head">
+    <title id="pageTitle">kaa-work :: Registration</title>
+</head>
+
+<body class="login-img3-body">
+
+<div class="container">
+    <div th:if="${param.error}">
+        <div class="alert alert-danger">
+            Invalid username and password.
+        </div>
+    </div>
+    <div th:if="${param.logout}">
+        <div class="alert alert-info">
+            You have been logged out.
+        </div>
+    </div>
+
+    <form class="login-form" th:action="@{/kaawork/registration}" th:object="${newuser}" method="post">
+        <div class="login-wrap">
+            <p class="login-img"><i class="icon_lock_alt"></i></p>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="icon_profile"></i></span>
+                <input type="text" th:field="*{ssoId}" class="form-control input-lg"
+                       placeholder="UserName" required="true" autofocus="true"/>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="icon_key_alt"></i></span>
+                <input type="password" th:field="*{password}" class="form-control input-lg"
+                       placeholder="Password" required="true"/>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="icon_key_alt"></i></span>
+                <input type="text" th:field="*{firstName}" class="form-control input-lg"
+                       placeholder="First Name" required="true"/>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="icon_key_alt"></i></span>
+                <input type="text" th:field="*{lastName}" class="form-control input-lg"
+                       placeholder="Last Name" required="true"/>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="icon_key_alt"></i></span>
+                <input type="text" th:field="*{email}" class="form-control input-lg"
+                       placeholder="email" required="true"/>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="icon_key_alt"></i></span>
+                <select th:field="*{userProfiles}" >
+                    <option th:each="role : ${roles}" th:value="${role.id}" th:text="${role.type}"/>
+                </select>
+            </div>
+
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+            <button class="btn btn-info btn-lg btn-block" type="submit">Signup</button>
+        </div>
+    </form>
+    <div class="text-right">
+        <div class="credits">
+            <!--
+                All the links in the footer should remain intact.
+                You can delete the links only if you purchased the pro version.
+                Licensing information: https://bootstrapmade.com/license/
+                Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
+            -->
+            <a href="https://bootstrapmade.com/free-business-bootstrap-themes-website-templates/">Business Bootstrap Themes</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

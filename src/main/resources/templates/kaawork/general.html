@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head th:include="kaawork/templates :: head">
-    <title userId="pageTitle">kaa-work :: Bootstrap 3 Elements</title>
+    <title id="pageTitle">kaa-work :: Bootstrap 3 Elements</title>
 </head>
   <body>
   <!-- container section start -->
-  <section userId="container" class="">
+  <section id="container" class="">
       <header th:include="kaawork/templates :: topnav" class="header dark-bg"></header>
 
       <aside th:include="kaawork/templates :: asidemenu"></aside>
 
       <!--main content start-->
-      <section userId="main-content">
+      <section id="main-content">
           <section class="wrapper">
               <div class="row">
 				<div class="col-lg-12">
@@ -80,12 +80,12 @@
                           </header>
                           <div class="panel-body">
                               <div class="tab-content">
-                                  <div userId="home" class="tab-pane active">
+                                  <div id="home" class="tab-pane active">
                                       Home
                                   </div>
-                                  <div userId="about" class="tab-pane">About</div>
-                                  <div userId="profile" class="tab-pane">Profile</div>
-                                  <div userId="contact" class="tab-pane">Contact</div>
+                                  <div id="about" class="tab-pane">About</div>
+                                  <div id="profile" class="tab-pane">Profile</div>
+                                  <div id="contact" class="tab-pane">Contact</div>
                               </div>
                           </div>
                       </section>
@@ -115,11 +115,11 @@
                           </header>
                           <div class="panel-body">
                               <div class="tab-content">
-                                  <div userId="home-2" class="tab-pane ">
+                                  <div id="home-2" class="tab-pane ">
                                       Home
                                   </div>
-                                  <div userId="about-2" class="tab-pane active">About</div>
-                                  <div userId="contact-2" class="tab-pane ">Contact</div>
+                                  <div id="about-2" class="tab-pane active">About</div>
+                                  <div id="contact-2" class="tab-pane ">Contact</div>
                               </div>
                           </div>
                       </section>
@@ -151,11 +151,11 @@
                           </header>
                           <div class="panel-body">
                               <div class="tab-content">
-                                  <div userId="home-3" class="tab-pane active">
+                                  <div id="home-3" class="tab-pane active">
                                       Home
                                   </div>
-                                  <div userId="about-3" class="tab-pane">About</div>
-                                  <div userId="contact-3" class="tab-pane">Contact</div>
+                                  <div id="about-3" class="tab-pane">About</div>
+                                  <div id="contact-3" class="tab-pane">Contact</div>
                               </div>
                           </div>
                       </section>
@@ -251,7 +251,7 @@
                                   Alert !
                               </a>
                               <!-- Modal -->
-                              <div class="modal fade" userId="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                   <div class="modal-dialog">
                                       <div class="modal-content">
                                           <div class="modal-header">
@@ -272,7 +272,7 @@
                               </div>
                               <!-- modal -->
                               <!-- Modal -->
-                              <div class="modal fade" userId="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                              <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                   <div class="modal-dialog">
                                       <div class="modal-content">
                                           <div class="modal-header">
@@ -293,7 +293,7 @@
                               </div>
                               <!-- modal -->
                               <!-- Modal -->
-                              <div class="modal fade" userId="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                              <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                   <div class="modal-dialog">
                                       <div class="modal-content">
                                           <div class="modal-header">
@@ -319,7 +319,7 @@
 
                       <!--carousel start-->
                       <section class="panel">
-                          <div userId="c-slide" class="carousel slide auto panel-body">
+                          <div id="c-slide" class="carousel slide auto panel-body">
                               <ol class="carousel-indicators out">
                                   <li class="active" data-slide-to="0" data-target="#c-slide"></li>
                                   <li class="" data-slide-to="1" data-target="#c-slide"></li>
@@ -356,13 +356,13 @@
                           </header>
                           <div class="panel-body">
                               <p class="">Click on below buttons to check it out.</p>
-                              <a userId="add-regular" class="btn btn-default btn-sm" href="javascript:;">Regular</a>
-                              <a userId="add-sticky" class="btn btn-success  btn-sm" href="javascript:;">Sticky</a>
-                              <a userId="add-without-image" class="btn btn-info  btn-sm" href="javascript:;">Imageless</a>
+                              <a id="add-regular" class="btn btn-default btn-sm" href="javascript:;">Regular</a>
+                              <a id="add-sticky" class="btn btn-success  btn-sm" href="javascript:;">Sticky</a>
+                              <a id="add-without-image" class="btn btn-info  btn-sm" href="javascript:;">Imageless</a>
 
-                              <a userId="add-gritter-light" class="btn btn-warning  btn-sm" href="javascript:;">Light</a>
-                              <a userId="add-max" class="btn btn-primary  btn-sm" href="javascript:;">Max of 3</a>
-                              <a userId="remove-all" class="btn btn-danger  btn-sm" href="#">Remove all</a>
+                              <a id="add-gritter-light" class="btn btn-warning  btn-sm" href="javascript:;">Light</a>
+                              <a id="add-max" class="btn btn-primary  btn-sm" href="javascript:;">Max of 3</a>
+                              <a id="remove-all" class="btn btn-danger  btn-sm" href="#">Remove all</a>
                           </div>
                       </section>
                       <!--gritter notification end-->
@@ -481,7 +481,7 @@
                       <!--progress bar end-->
 
                       <!--collapse start-->
-                      <div class="panel-group m-bot20" userId="accordion">
+                      <div class="panel-group m-bot20" id="accordion">
                           <div class="panel panel-default">
                               <div class="panel-heading">
                                   <h4 class="panel-title">
@@ -490,7 +490,7 @@
                                       </a>
                                   </h4>
                               </div>
-                              <div userId="collapseOne" class="panel-collapse collapse in">
+                              <div id="collapseOne" class="panel-collapse collapse in">
                                   <div class="panel-body">
                                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                                   </div>
@@ -504,7 +504,7 @@
                                       </a>
                                   </h4>
                               </div>
-                              <div userId="collapseTwo" class="panel-collapse collapse">
+                              <div id="collapseTwo" class="panel-collapse collapse">
                                   <div class="panel-body">
                                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                                   </div>
@@ -518,7 +518,7 @@
                                       </a>
                                   </h4>
                               </div>
-                              <div userId="collapseThree" class="panel-collapse collapse">
+                              <div id="collapseThree" class="panel-collapse collapse">
                                   <div class="panel-body">
                                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                                   </div>
@@ -615,17 +615,17 @@
   <!-- container section end -->
 
     <!-- javascripts -->
-    <script src="../../kaawork/js/jquery.js"></script>
-    <script src="../../kaawork/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
     <!-- nice scroll -->
-    <script src="../../kaawork/js/jquery.scrollTo.min.js"></script>
-    <script src="../../kaawork/js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="/js/jquery.scrollTo.min.js"></script>
+    <script src="/js/jquery.nicescroll.js" type="text/javascript"></script>
     <!-- gritter -->
    
     <!-- custom gritter script for this page only-->
-    <script src="../../kaawork/js/gritter.js" type="text/javascript"></script>
+    <script src="/js/gritter.js" type="text/javascript"></script>
     <!--custome script for all page-->
-    <script src="../../kaawork/js/scripts.js"></script>
+    <script src="/js/scripts.js"></script>
 
     
 

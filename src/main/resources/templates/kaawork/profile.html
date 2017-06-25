@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head th:include="kaawork/templates :: head">
-    <title userId="pageTitle">kaa-work :: My Profile</title>
+    <title id="pageTitle">kaa-work :: My Profile</title>
 </head>
 
   <body>
   <!-- container section start -->
-  <section userId="container" class="">
+  <section id="container" class="">
       <header th:include="kaawork/templates :: topnav" class="header dark-bg"></header>
       <!--header end-->
 
@@ -15,7 +15,7 @@
       <!--sidebar end-->
       
       <!--main content start-->
-      <section userId="main-content">
+      <section id="main-content">
           <section class="wrapper">
 		  <div class="row">
 				<div class="col-lg-12">
@@ -33,17 +33,21 @@
                     <div class="profile-widget profile-widget-info">
                           <div class="panel-body">
                             <div class="col-lg-2 col-sm-2">
-                              <h4>Jenifer Smith</h4>               
+                              <h4 th:text="${user.firstName} + ' ' + ${user.lastName}"/>
                               <div class="follow-ava">
+                                  <!-- TODO images upload -->
                                   <img src="/images/profile-widget-avatar.jpg" alt=""/>
                               </div>
-                              <h6>Administrator</h6>
+                              <h6 th:text="${user.occupation}"/>
                             </div>
                             <div class="col-lg-4 col-sm-4 follow-info">
-                                <p>Hello I’m Jenifer Smith, a leading expert in interactive and creative design.</p>
-                                <p>@jenifersmith</p>
-								<p><i class="fa fa-twitter">jenifertweet</i></p>
-                                <h6>
+                                <p>Hello I’m</p>
+                                <span th:text="${user.firstName}"/>
+                                <span th:text="${user.lastName}" />
+                                <p th:text="${user.occupation}" />
+                                <!--<p>@jenifersmith</p>-->
+								<!--<p><i class="fa fa-twitter">jenifertweet</i></p>-->
+                                <h6><!-- TODO last visited and where is visited ~ web services geo ip -->
                                     <span><i class="icon_clock_alt"></i>11:05 AM</span>
                                     <span><i class="icon_calendar"></i>25.10.13</span>
                                     <span><i class="icon_pin_alt"></i>NY</span>
@@ -114,7 +118,7 @@
                           </header>
                           <div class="panel-body">
                               <div class="tab-content">
-                                  <div userId="recent-activity" class="tab-pane active">
+                                  <div id="recent-activity" class="tab-pane active">
                                       <div class="profile-activity">                                          
                                           <div class="act-time">                                      
                                               <div class="activity-body act-in">
@@ -162,7 +166,7 @@
                                                   <div class="text">
                                                       <a href="#" class="activity-img"><img class="avatar" src="/images/chat-avatar.jpg" alt=""/></a>
                                                       <p class="attribution"><a href="#">Maria Willyam</a> at 5:25am, 30th Octmber 2014</p>
-                                                      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque userId cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+                                                      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
                                                   </div>
                                               </div>
                                           </div>
@@ -202,7 +206,7 @@
                                                   <div class="text">
                                                       <a href="#" class="activity-img"><img class="avatar" src="/images/chat-avatar.jpg" alt=""/></a>
                                                       <p class="attribution"><a href="#">Maria Willyam</a> at 5:25am, 30th Octmber 2014</p>
-                                                      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque userId cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+                                                      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
                                                   </div>
                                               </div>
                                           </div>
@@ -210,37 +214,36 @@
                                       </div>
                                   </div>
                                   <!-- profile -->
-                                  <div userId="profile" class="tab-pane">
+                                  <div id="profile" class="tab-pane">
                                     <section class="panel">
                                       <div class="bio-graph-heading">
-                                                Hello I’m Jenifer Smith, a leading expert in interactive and creative design specializing in the mobile medium. My graduation from Massey University with a Bachelor of Design majoring in visual communication.
+                                                Hello I’m <span th:text="${#authorization.expression('isAuthenticated()')} ?
+                                                            ${user.firstName} + ' ' + ${user.lastName} :
+                                                            'the user is NOT logged in'" />, a leading expert in interactive and creative design specializing in the mobile medium. My graduation from Massey University with a Bachelor of Design majoring in visual communication.
                                       </div>
                                       <div class="panel-body bio-graph-info">
                                           <h1>Bio Graph</h1>
                                           <div class="row">
                                               <div class="bio-row">
-                                                  <p><span>First Name </span>: Jenifer </p>
+                                                  <p><span>First Name </span>: <span th:text="${user.firstName}"/> </p>
                                               </div>
                                               <div class="bio-row">
-                                                  <p><span>Last Name </span>: Smith</p>
+                                                  <p><span>Last Name </span>: <span th:text="${user.lastName}"/></p>
                                               </div>                                              
                                               <div class="bio-row">
-                                                  <p><span>Birthday</span>: 27 August 1987</p>
+                                                  <p><span>Birthday</span>: <span th:text="${user.birthDate != null} ? ${#dates.format(user.birthDate, 'yyyy MMMM dd')}" /></p>
                                               </div>
                                               <div class="bio-row">
-                                                  <p><span>Country </span>: United</p>
+                                                  <p><span>Country </span>: under constructing </p>
                                               </div>
                                               <div class="bio-row">
-                                                  <p><span>Occupation </span>: UI Designer</p>
+                                                  <p><span>Occupation </span>: <span th:text="${user.occupation != null} ? ${user.occupation}"/></p>
                                               </div>
                                               <div class="bio-row">
-                                                  <p><span>Email </span>:jenifer@mailname.com</p>
+                                                  <p><span>Email </span>: <span th:text="${user.email != null} ? ${user.email}"/></p>
                                               </div>
                                               <div class="bio-row">
-                                                  <p><span>Mobile </span>: (+6283) 456 789</p>
-                                              </div>
-                                              <div class="bio-row">
-                                                  <p><span>Phone </span>:  (+021) 956 789123</p>
+                                                  <p><span>Website </span>: <span th:text="${user.website != null} ? ${user.website}"/></p>
                                               </div>
                                           </div>
                                       </div>
@@ -251,63 +254,64 @@
                                       </section>
                                   </div>
                                   <!-- edit-profile -->
-                                  <div userId="edit-profile" class="tab-pane">
+                                  <div id="edit-profile" class="tab-pane">
                                     <section class="panel">                                          
                                           <div class="panel-body bio-graph-info">
                                               <h1> Profile Info</h1>
-                                              <form class="form-horizontal" role="form">                                                  
+                                              <form class="form-horizontal" role="form" method="post" th:action="@{/kaawork/profile}" th:object="${user}">
+                                                  <input
+                                                          type="hidden"
+                                                          th:name="${_csrf.parameterName}"
+                                                          th:value="${_csrf.token}" />
                                                   <div class="form-group">
                                                       <label class="col-lg-2 control-label">First Name</label>
                                                       <div class="col-lg-6">
-                                                          <input type="text" class="form-control" userId="f-name" placeholder=" "/>
+                                                          <input type="text" class="form-control" id="f-name" name="f-name" placeholder=" " th:field="*{firstName}" />
                                                       </div>
                                                   </div>
                                                   <div class="form-group">
                                                       <label class="col-lg-2 control-label">Last Name</label>
                                                       <div class="col-lg-6">
-                                                          <input type="text" class="form-control" userId="l-name" placeholder=" "/>
+                                                          <input type="text" class="form-control" id="l-name" name="l-name" placeholder=" " th:field="*{lastName}"/>
                                                       </div>
                                                   </div>
-                                                  <div class="form-group">
+                                                  <!--<div class="form-group">
                                                       <label class="col-lg-2 control-label">About Me</label>
                                                       <div class="col-lg-10">
-                                                          <textarea name="" userId="" class="form-control" cols="30" rows="5"></textarea>
+                                                          <textarea name="" id="" class="form-control" cols="30" rows="5"></textarea>
                                                       </div>
                                                   </div>
                                                   <div class="form-group">
                                                       <label class="col-lg-2 control-label">Country</label>
                                                       <div class="col-lg-6">
-                                                          <input type="text" class="form-control" userId="c-name" placeholder=" "/>
+                                                          <input type="text" class="form-control" id="c-name" placeholder=" "/>
                                                       </div>
-                                                  </div>
+                                                  </div>-->
                                                   <div class="form-group">
                                                       <label class="col-lg-2 control-label">Birthday</label>
                                                       <div class="col-lg-6">
-                                                          <input type="text" class="form-control" userId="b-day" placeholder=" "/>
+                                                          <!--<input type="text" class="form-control" id="b-day" name="b-day" placeholder=" "  th:value="${user.birthDate != null} ? ${#dates.format(user.birthDate, 'dd.MM.yyyy')}"/>-->
+                                                          <input type="date" class="form-control" id="b-day" name="b-day" th:field="*{birthDate}" />
                                                       </div>
                                                   </div>
                                                   <div class="form-group">
                                                       <label class="col-lg-2 control-label">Occupation</label>
                                                       <div class="col-lg-6">
-                                                          <input type="text" class="form-control" userId="occupation" placeholder=" "/>
+                                                          <input type="text" class="form-control" id="occupation" name="occupation" placeholder=" " th:field="*{occupation}"/>
                                                       </div>
                                                   </div>
                                                   <div class="form-group">
                                                       <label class="col-lg-2 control-label">Email</label>
                                                       <div class="col-lg-6">
-                                                          <input type="text" class="form-control" userId="email" placeholder=" "/>
-                                                      </div>
-                                                  </div>
-                                                  <div class="form-group">
-                                                      <label class="col-lg-2 control-label">Mobile</label>
-                                                      <div class="col-lg-6">
-                                                          <input type="text" class="form-control" userId="mobile" placeholder=" "/>
+                                                          <input type="text" class="form-control" id="email" name="email" placeholder=" " th:field="*{email}"/>
                                                       </div>
                                                   </div>
                                                   <div class="form-group">
                                                       <label class="col-lg-2 control-label">Website URL</label>
                                                       <div class="col-lg-6">
-                                                          <input type="text" class="form-control" userId="url" placeholder="http://www.demowebsite.com "/>
+                                                          <input type="text" class="form-control" id="url" name="website"
+                                                                 placeholder="http://www.demowebsite.com"
+                                                                 th:field="*{website}" />
                                                       </div>
                                                   </div>
 

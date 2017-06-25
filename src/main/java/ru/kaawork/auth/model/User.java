@@ -1,9 +1,11 @@
 package ru.kaawork.auth.model;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -34,8 +36,20 @@ public class User implements Serializable{
 	@Column(name="email", nullable=false)
 	private String email;
 
-	@OneToOne(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
-	private Profile profile;
+	@Column(name = "about_me")
+	private String aboutMe;
+
+	@Column(name = "birth_date")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date birthDate;
+
+	private String occupation;
+
+	private String website;
+
+
+	/*@OneToOne(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
+	private Profile profile;*/
 
 	@NotEmpty
 	@ManyToMany(fetch = FetchType.LAZY)
@@ -44,13 +58,13 @@ public class User implements Serializable{
              inverseJoinColumns = { @JoinColumn(name = "user_profile_id") })
 	private Set<UserProfile> userProfiles = new HashSet<UserProfile>();
 
-	public Profile getProfile() {
+	/*public Profile getProfile() {
 		return profile;
 	}
 
 	public void setProfile(Profile profile) {
 		this.profile = profile;
-	}
+	}*/
 
 	public Integer getId() {
 		return id;
@@ -106,6 +120,38 @@ public class User implements Serializable{
 
 	public void setUserProfiles(Set<UserProfile> userProfiles) {
 		this.userProfiles = userProfiles;
+	}
+
+	public String getAboutMe() {
+		return aboutMe;
+	}
+
+	public void setAboutMe(String aboutMe) {
+		this.aboutMe = aboutMe;
+	}
+
+	public Date getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
+	}
+
+	public String getOccupation() {
+		return occupation;
+	}
+
+	public void setOccupation(String occupation) {
+		this.occupation = occupation;
+	}
+
+	public String getWebsite() {
+		return website;
+	}
+
+	public void setWebsite(String website) {
+		this.website = website;
 	}
 
 	@Override
