@@ -5096,6 +5096,10 @@ ul.ft-link li a i {
 
     display: inline-block;
 
+    width: 40px;
+
+    height: 40px;
+
 }
 
 .profile-ava img.simple{

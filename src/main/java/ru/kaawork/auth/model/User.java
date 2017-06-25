@@ -51,7 +51,7 @@ public class User implements Serializable{
 	/*@OneToOne(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
 	private Profile profile;*/
 
-	@NotEmpty
+	//@NotEmpty
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "app_user_user_profile",
              joinColumns = { @JoinColumn(name = "user_id") },

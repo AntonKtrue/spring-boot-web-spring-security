@@ -23,6 +23,7 @@
     <form class="login-form" th:action="@{/kaawork/registration}" th:object="${newuser}" method="post">
         <div class="login-wrap">
             <p class="login-img"><i class="icon_lock_alt"></i></p>
+            <p th:if="${#fields.hasErrors()}">Username already exists.</p>
             <div class="input-group">
                 <span class="input-group-addon"><i class="icon_profile"></i></span>
                 <input type="text" th:field="*{ssoId}" class="form-control input-lg"
@@ -48,15 +49,15 @@
                 <input type="text" th:field="*{email}" class="form-control input-lg"
                        placeholder="email" required="true"/>
             </div>
-            <div class="input-group">
+
+
+            <!--<div class="input-group">
                 <span class="input-group-addon"><i class="icon_key_alt"></i></span>
                 <select th:field="*{userProfiles}" >
                     <option th:each="role : ${roles}" th:value="${role.id}" th:text="${role.type}"/>
                 </select>
-            </div>
-
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
-            <button class="btn btn-info btn-lg btn-block" type="submit">Signup</button>
+            </div>-->
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Signup</button>
         </div>
     </form>
     <div class="text-right">

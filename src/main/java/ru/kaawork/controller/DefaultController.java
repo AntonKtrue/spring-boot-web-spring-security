@@ -11,13 +11,12 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+//TODO cut this class later
 @Controller
 public class DefaultController {
 
     @Autowired
     PersistentTokenBasedRememberMeServices persistentTokenBasedRememberMeServices;
-
 
     @GetMapping("/")
     public String home1() {

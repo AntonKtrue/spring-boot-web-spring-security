@@ -13,6 +13,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -21,10 +23,14 @@ import org.springframework.web.servlet.ModelAndView;
 import ru.kaawork.auth.model.User;
 import ru.kaawork.auth.model.UserProfile;
 
+import ru.kaawork.auth.model.UserProfileType;
 import ru.kaawork.auth.service.UserProfileService;
 import ru.kaawork.auth.service.UserService;
 
+import javax.validation.Valid;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Locale;
 
 
 /**
@@ -62,9 +68,31 @@ public class KaaworkController {
     }
 
     @RequestMapping(value = "registration", method = RequestMethod.POST)
-    public String sum(@ModelAttribute User newuser, Model model) {
+    //public String saveUser(@ModelAttribute User newuser, Model model) {
+    public String saveUser(@ModelAttribute("newuser") @Valid User newuser, BindingResult result) {
+        if(result.hasErrors()) {
+            logger.info("result.hasErrors()");
+            return "/kaawork/registration";
+        }
+
+        if(!userService.isUserSSOUnique(newuser.getId(), newuser.getSsoId())) {
+            logger.info("User is not unique");
+            FieldError ssoError = new FieldError("user",
+                    "ssoId",
+                    "User " + newuser.getSsoId() + " already exists");
+            result.addError(ssoError);
+            return "/kaawork/registration";
+        }
+
         logger.info("New user add: {} {} ", newuser.getFirstName(), newuser.getLastName());
         userService.saveUser(newuser);
+        UserProfile userProfile = new UserProfile();
+        userProfile.setId(1); //TODO this is magical world...
+        userProfile.setType(UserProfileType.USER.getUserProfileType());
+        LinkedHashSet<UserProfile> userProfiles = new LinkedHashSet<>();
+        userProfiles.add(userProfile);
+        newuser.setUserProfiles(userProfiles);
+        userService.updateUser(newuser);
         return "kaawork/login";
     }
     @RequestMapping(value = "profile", method = RequestMethod.POST)
@@ -84,12 +112,6 @@ public class KaaworkController {
         userService.updateUser(currentUser);
         return "kaawork/profile";
     }
-
-//    @RequestMapping("registration")
-//    public String getRegistration(Model model) {
-//        model.addAttribute("newuser", new User());
-//        return "kaawork/registration";
-//    }
 
     @RequestMapping("/{page}")
     public String getPage(@PathVariable("page") String page, Model model) {
@@ -111,6 +133,10 @@ public class KaaworkController {
                 return "kaawork/widgets";
             case "chart-chartjs":
                 return "kaawork/chart-chartjs";
+            case "rest":
+                return "kaawork/rest";
+            case "camel":
+                return "kaawork/camel";
             case "ws":
                 model.addAttribute("ipaddress", clientIpAddress());
                 model.addAttribute("country",clientCountry());
@@ -119,41 +145,6 @@ public class KaaworkController {
                 return "kaawork/index";
         }
     }
-
-
-//    @RequestMapping("login")
-//    public String getLogin() {
-//        return "kaawork/login";
-//    }
-
-//    @RequestMapping("profile")
-//    public String getProfile(Model model) {
-//        model.addAttribute("user", getCurrentUser());
-//        return "kaawork/profile";
-//    }
-
-//    @RequestMapping("resume")
-//    public String getResume(Model model) {
-//        model.addAttribute("user", getCurrentUser());
-//        return "kaawork/resume";
-//    }
-
-//    @RequestMapping("widgets")
-//    public String getWidgets(Model model) {
-//        model.addAttribute("user", getCurrentUser());
-//        return "kaawork/widgets";
-//    }
-
-//    @RequestMapping("chart-chartjs")
-//    public String getCharts(Model model) {
-//        model.addAttribute("user", getCurrentUser());
-//        return "kaawork/chart-chartjs";
-//    }
-
-//    @RequestMapping("templates")
-//    public String getTemplates() {
-//        return "kaawork/templates";
-//    }
 
     @RequestMapping("form/{value}")
     public String form(@PathVariable("value") String value, Model model) {

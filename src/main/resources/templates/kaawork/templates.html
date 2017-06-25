@@ -6,9 +6,9 @@
 <head th:fragment="head">
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template"/>
-    <meta name="author" content="GeeksLabs"/>
-    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal"/>
+    <meta name="description" content="Demonstration application. 2017 June"/>
+    <meta name="author" content="Anton Kitov"/>
+    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal, REST, WebService, Spring Boot"/>
     <link rel="shortcut icon" href="img/favicon.png"/>
     <title th:include=":: #pageTitle">Live Resume</title>
     <!-- Bootstrap CSS -->
@@ -267,7 +267,7 @@
             <li class="dropdown">
                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
-                                <img alt="" src="/images/avatar-mini2.jpg"/>
+                                <img alt="" src="/images/user_pic.png"/>
                             </span>
                     <span class="username"
                           th:text="${#authorization.expression('isAuthenticated()')} ?
@@ -405,20 +405,6 @@
                 </a>
                 <ul class="sub">
                     <li><a class="" href="basic_table.html">Basic Table</a></li>
-                </ul>
-            </li>
-
-            <li class="sub-menu">
-                <a href="javascript:;" class="">
-                    <i class="icon_documents_alt"></i>
-                    <span>Pages</span>
-                    <span class="menu-arrow arrow_carrot-right"></span>
-                </a>
-                <ul class="sub">
-                    <li><a class="" href="profile.html">Profile</a></li>
-                    <li><a class="" href="/kaawork/login"><span>Login Page</span></a></li>
-                    <li><a class="" href="blank.html">Blank Page</a></li>
-                    <li><a class="" href="404.html">404 Error</a></li>
                 </ul>
             </li>
 
