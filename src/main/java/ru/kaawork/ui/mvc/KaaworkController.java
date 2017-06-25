@@ -2,9 +2,6 @@ package ru.kaawork.ui.mvc;
 
 
 
-import net.webservicex.geoip.GeoIP;
-import net.webservicex.geoip.GeoIPService;
-import net.webservicex.geoip.GeoIPServiceSoap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

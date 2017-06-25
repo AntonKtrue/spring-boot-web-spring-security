@@ -1,5 +1,5 @@
 
-package net.webservicex.goldsilver;
+package net.webservicex;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -25,8 +25,8 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
-@XmlRootElement(name = "GetLondonGoldAndSilverFix")
-public class GetLondonGoldAndSilverFix {
+@XmlRootElement(name = "GetGeoIPContext")
+public class GetGeoIPContext {
 
 
 }

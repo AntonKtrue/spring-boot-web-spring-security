@@ -1,5 +1,5 @@
 
-package net.webservicex.geoip;
+package net.webservicex;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

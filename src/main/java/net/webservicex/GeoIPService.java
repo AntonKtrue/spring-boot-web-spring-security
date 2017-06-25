@@ -1,5 +1,5 @@
 
-package net.webservicex.geoip;
+package net.webservicex;
 
 import javax.xml.namespace.QName;
 import javax.xml.ws.*;

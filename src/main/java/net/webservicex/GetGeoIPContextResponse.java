@@ -1,5 +1,5 @@
 
-package net.webservicex.geoip;
+package net.webservicex;
 
 import javax.xml.bind.annotation.*;
 
@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.*;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="IPAddress" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="GetGeoIPContextResult" type="{http://www.webservicex.net/}GeoIP" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -25,36 +25,36 @@ import javax.xml.bind.annotation.*;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "ipAddress"
+    "getGeoIPContextResult"
 })
-@XmlRootElement(name = "GetGeoIP")
-public class GetGeoIP {
+@XmlRootElement(name = "GetGeoIPContextResponse")
+public class GetGeoIPContextResponse {
 
-    @XmlElement(name = "IPAddress")
-    protected String ipAddress;
+    @XmlElement(name = "GetGeoIPContextResult")
+    protected GeoIP getGeoIPContextResult;
 
     /**
-     * Gets the value of the ipAddress property.
+     * Gets the value of the getGeoIPContextResult property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link GeoIP }
      *     
      */
-    public String getIPAddress() {
-        return ipAddress;
+    public GeoIP getGetGeoIPContextResult() {
+        return getGeoIPContextResult;
     }
 
     /**
-     * Sets the value of the ipAddress property.
+     * Sets the value of the getGeoIPContextResult property.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link GeoIP }
      *     
      */
-    public void setIPAddress(String value) {
-        this.ipAddress = value;
+    public void setGetGeoIPContextResult(GeoIP value) {
+        this.getGeoIPContextResult = value;
     }
 
 }

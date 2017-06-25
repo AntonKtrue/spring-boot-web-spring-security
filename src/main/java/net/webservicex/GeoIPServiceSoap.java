@@ -1,5 +1,5 @@
 
-package net.webservicex.geoip;
+package net.webservicex;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
